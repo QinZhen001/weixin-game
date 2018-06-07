@@ -5,7 +5,7 @@ import {Director} from  '../Director.js'
 
 export class Pencil extends Sprite {
     constructor(image, top) {
-        super(img,
+        super(image,
             0, 0,
             image.width,
             image.height,
