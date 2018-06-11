@@ -11,7 +11,7 @@ h5版本的flappy bird
 
 <div align="center">
 
-![小游戏演示](https://github.com/QinZhen001/my-movie/blob/master/screenshot/GIF.gif)
+![小游戏演示](https://github.com/QinZhen001/weixin-game/blob/master/screenshot/GIF.gif)
 
 
 <div/>
