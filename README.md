@@ -1,2 +1,6 @@
-# weixin-game
-:maple_leaf: 微信小游戏
+# flappy bird
+
+
+h5版本的flappy bird
+
+**未接入微信小游戏api**
