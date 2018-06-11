@@ -10,7 +10,7 @@ export class Pencil extends Sprite {
             image.width,
             image.height,
             //在右侧看不见的位置
-            DataStore.getInstance().canvas.width + 10, 0,
+            DataStore.getInstance().canvas.width, 0,
             image.width, image.height)
         this.top = top
         this.moveSpeed = Director.getInstance().moveSpeed

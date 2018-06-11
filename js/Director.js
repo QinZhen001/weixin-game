@@ -35,6 +35,7 @@ export class Director {
             if (pencils[0].x + pencils[0].width <= 0 && pencils.length === 4) {
                 pencils.shift()
                 pencils.shift()
+                this.dataStore.get('score').canScore = true
             }
 
             //先判断铅笔情况，再绘制铅笔
@@ -47,12 +48,14 @@ export class Director {
 
 
             this.dataStore.get('land').draw()
+            this.dataStore.get('score').draw()
             this.dataStore.get('birds').draw()
 
             let timer = requestAnimationFrame(() => this.run())
             this.dataStore.put('timer', timer)
         } else {
             console.log('游戏结束')
+            this.dataStore.get('startButton').draw();
             cancelAnimationFrame(this.dataStore.get('timer'))
         }
     }
@@ -100,11 +103,18 @@ export class Director {
 
             if (Director.isStrike(birdsBorder, pencilBorder)) {
                 console.log('撞到水管啦');
-                console.log('birdsBorder',birdsBorder)
-                console.log('pencilBorder',pencilBorder)
+                console.log('birdsBorder', birdsBorder)
+                console.log('pencilBorder', pencilBorder)
                 this.isGameOver = true;
                 return;
             }
+        }
+
+        //加分逻辑
+        if(birds.birdsX[0] > pencils[0].x+pencils[0].width
+            && score.canScore){
+            score.canScore = false;
+            score.scoreNumber++;
         }
 
     }
